@@ -4,7 +4,7 @@ import Figure from "./Figure";
 
 export default function Board() {
   return (
-    <div>
+    <div className="board">
       <div className="row">
         <Cell id={0}></Cell>
         <Cell id={1}></Cell>

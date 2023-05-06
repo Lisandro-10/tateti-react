@@ -72,3 +72,27 @@
   margin: 0;
   font-size: 0.7rem;
 }
+
+.board {
+  background-color: #3a52a8;
+  height: 500px;
+  width: 500px;
+  left: 50%;
+  margin: auto;
+}
+
+.cells {
+  display: inline-block;
+  background-color: #ecefe6;
+  cursor: pointer;
+  position: relative;
+  margin: auto 2px;
+  padding: 0;
+  width: 31%;
+  height: 31%;
+}
+
+.row {
+  width: 50%;
+  margin: auto;
+}
