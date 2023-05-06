@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import ChooseSection from "./ChooseSection";
 import Board from "./Board";
+import GameStarter from "./components/GameStarter";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <h1>TA - TE - TI</h1>
       <ChooseSection player={1} />
       <ChooseSection player={2} />
+
+      <GameStarter />
 
       <Board />
     </BrowserRouter>
