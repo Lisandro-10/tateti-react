@@ -2,26 +2,17 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
+import ChooseSection from "./ChooseSection";
+import Board from "./Board";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <h1>TA - TE - TI</h1>
+      <ChooseSection player={1} />
+      <ChooseSection player={2} />
+
+      <Board />
     </BrowserRouter>
   );
 }
