@@ -1,3 +1,6 @@
 export default class Match {
-  constructor(actualTurn: number) {}
+  public actualTurn: string;
+  constructor(actualTurn: string) {
+    this.actualTurn = actualTurn;
+  }
 }

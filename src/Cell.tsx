@@ -1,14 +1,10 @@
-import React from "react";
+export default function Cell() {
+  const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
 
-export default function Cell(props: { id: string; figure: string }) {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const buttonId: string = e.currentTarget.id;
+    const button: HTMLButtonElement = event.currentTarget;
+    button.innerHTML = "";
   };
 
-  return (
-    <button className="cells" onClick={handleClick}>
-      {props.figure}
-    </button>
-  );
+  return <button className="cells" onClick={buttonHandler}></button>;
 }
