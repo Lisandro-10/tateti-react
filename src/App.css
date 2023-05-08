@@ -86,13 +86,24 @@
   background-color: #ecefe6;
   cursor: pointer;
   position: relative;
-  margin: auto 2px;
+  margin: 2px;
   padding: 0;
-  width: 31%;
-  height: 31%;
+  width: 160px;
+  height: 163px;
 }
 
 .row {
-  width: 50%;
+  width: 100%;
   margin: auto;
+}
+
+.btn-start {
+  margin: 15px;
+  border-radius: 15px;
+  background-color: #3a52a8;
+  border: 2px solid transparent;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
 }

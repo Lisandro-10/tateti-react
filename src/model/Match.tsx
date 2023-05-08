@@ -1,3 +1,3 @@
-class Player {
-  constructor(name: String) {}
+export default class Match {
+  constructor(actualTurn: number) {}
 }

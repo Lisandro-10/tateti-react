@@ -1,5 +1,9 @@
-import Match from "../logic/InitializeMatch";
+import InitializeMatch from "../logic/InitializeMatch";
 
 export default function GameStarter() {
-  return <button onClick={Match}></button>;
+  return (
+    <button className="btn-start" onClick={InitializeMatch}>
+      Iniciar Partida
+    </button>
+  );
 }
