@@ -1,73 +1,59 @@
-import ChooseSection from "../components/GlobalContent";
 import Match from "../model/Match";
 import Player from "../model/Player";
 
+const matchBegin = new Match(randomTurn());
+var player1 = new Player("");
+var player2 = new Player("");
+
 export default function InitializeMatch() {
   const input1 = document.getElementById("input1") as HTMLInputElement;
-  const name1 = input1?.value;
   const input2 = document.getElementById("input1") as HTMLInputElement;
-  const name2 = input2?.value;
 
-  var match = new Match(randomTurn());
-  var player1 = new Player(name1);
-  var player2 = new Player(name2);
-  return 0;
+  player1.name = input1?.value;
+  player2.name = input2?.value;
+
+  figureChoose();
 }
+
+// const randomTurn = () => Math.floor(Math.random() * (1 - 0 + 1))+0
 
 function randomTurn() {
+  let arr = ["circle", "cross"];
   let min = 0;
   let max = 1;
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  let index = Math.floor(Math.random() * (max - min + 1)) + min;
+  return arr[index];
 }
 
-// function figureChoose() {
-//   //traigo los grupos de botones
+function figureChoose() {
+  //traigo los grupos de botones
 
-//   const radioChecked = document.querySelector(
-//     "input[name = 'chooseFigure1']:checked"
-//   ) as HTMLInputElement | null;
+  const radioChecked1 = document.querySelector(
+    "input[name = 'jugador1']:checked"
+  ) as HTMLInputElement | null;
+  const radioChecked2 = document.querySelector(
+    "input[name = 'jugador2']:checked"
+  ) as HTMLInputElement | null;
 
-//   const valueFigure = radioChecked?.value;
-//   //A partir de aca podemos ver que figura asignar dependiendo del boton chequeado
+  //Deberiamos tener el valor (figura) del boton apretado
+  const valueFigure1 = radioChecked1?.value;
+  const valueFigure2 = radioChecked2?.value;
 
-//   //chequeo cual eligio cada uno
-//   for (let i = 0; i < input1.length; i++) {
-//     if (input1[i].checked) {
-//       valueFigure1 = input1[i].value;
-//       console.log(valueFigure1);
-//     }
-//   }
-//   for (let i = 0; i < input2.length; i++) {
-//     if (input2[i].checked) {
-//       valueFigure2 = input2[i].value;
-//       console.log(valueFigure2);
-//     }
-//   }
+  console.log("Valor del boton1: " + radioChecked1);
+  console.log("Valor del boton2: " + radioChecked2);
+  console.log("Valor del boton1: " + valueFigure1);
+  console.log("Valor del boton2: " + valueFigure2);
 
-//   //no pueden elegir la misma figura
-//   if (valueFigure1 == valueFigure2) {
-//     console.log("No puede elegir la misma figura los dos jugadores.");
-//   } else {
-//     if (valueFigure1 == "circle") {
-//       this.player1.figure = this.icons.circle;
-//       this.player1.figureName = valueFigure1;
-//       this.player2.figure = this.icons.cross;
-//       this.player2.figureName = valueFigure2;
-//     } else {
-//       this.player1.figure = this.icons.cross;
-//       this.player2.figure = this.icons.circle;
-//       this.player1.figureName = valueFigure1;
-//       this.player2.figureName = valueFigure2;
-//     }
-
-//     document.getElementById("player-info-1").textContent =
-//       this.player1.name + ": " + this.player1.figureName;
-//     document.getElementById("player-info-2").textContent =
-//       this.player2.name + ": " + this.player2.figureName;
-
-//     for (let i = 0; i < input1.length; i++) {
-//       input1[i].disabled = true;
-//       input2[i].disabled = true;
-//     }
-//   }
-//}
+  //no pueden elegir la misma figura
+  if (valueFigure1 === valueFigure2) {
+    console.log("No puede elegir la misma figura los dos jugadores.");
+  } else {
+    if (valueFigure1 === "circle") {
+      player1.figureName = valueFigure1;
+      player2.figureName = valueFigure2;
+    } else {
+      player1.figureName = valueFigure2;
+      player2.figureName = valueFigure1;
+    }
+  }
+}

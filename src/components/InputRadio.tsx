@@ -6,7 +6,7 @@ export default function InputRadio(props: {
 }) {
   return (
     <div>
-      <label>{props.label}</label>
+      <label className="radioLabel">{props.label}</label>
       <input
         type="radio"
         className="inputRadio"

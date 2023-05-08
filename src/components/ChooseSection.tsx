@@ -12,13 +12,13 @@ export default function ChooseSection(props: {
       <InputRadio
         label={"Círculo"}
         name={props.name}
-        value={"Círculo"}
+        value="circle"
         id={props.id}
       />
       <InputRadio
         label={"Cruz"}
         name={props.name}
-        value={"Cruz"}
+        value="cross"
         id={props.id}
       />
     </div>
