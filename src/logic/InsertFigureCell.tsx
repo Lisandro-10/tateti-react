@@ -1,3 +1,4 @@
 export default function InsertFigureCell() {
-  var cellElement = document.getElementById("1");
+  // "<p class='figure-para'>X</p>";
+  return "X";
 }
