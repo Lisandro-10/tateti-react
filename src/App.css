@@ -66,18 +66,7 @@
   width: 100%;
 }
 
-.btn-start {
-  margin: 15px;
-  border-radius: 15px;
-  background-color: #3a52a8;
-  border: 2px solid transparent;
-  padding: 10px;
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-}
-
-/*** INPUT COMPONENTS ***/
+/*** INPUT ***/
 
 .inputText {
   margin: 4px;
@@ -94,7 +83,7 @@
   margin: 8px 10px;
 }
 
-/*** PARA STYLES ***/
+/*** PARA ***/
 
 .para {
   margin: 0;
@@ -124,7 +113,7 @@
   position: relative;
 }
 
-.cells:hover,
+/* .cells:hover,
 .cells:active {
   border-radius: 15px;
   position: sticky;
@@ -134,4 +123,27 @@
 .cells:link,
 .cells:visited {
   pointer-events: none;
+} */
+
+/*** BUTTONS ***/
+
+.btn-start {
+  margin: 15px;
+  border-radius: 15px;
+  background-color: #ecefe6;
+  color: #3a52a8;
+
+  border: 2px solid transparent;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-start:hover {
+  background-color: #3a52a8;
+  color: #ecefe6;
+}
+
+.btn-start:active {
+  border: 3px solid #61dafb;
 }

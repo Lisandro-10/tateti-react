@@ -1,21 +1,19 @@
 import Match from "../model/Match";
 import Player from "../model/Player";
 
-const matchBegin = new Match(randomTurn());
-var player1 = new Player("");
-var player2 = new Player("");
+export var matchBegin = new Match(randomTurn());
+export var player1 = new Player("");
+export var player2 = new Player("");
 
 export default function InitializeMatch() {
   const input1 = document.getElementById("input1") as HTMLInputElement;
-  const input2 = document.getElementById("input1") as HTMLInputElement;
+  const input2 = document.getElementById("input2") as HTMLInputElement;
 
   player1.name = input1?.value;
   player2.name = input2?.value;
 
   figureChoose();
 }
-
-// const randomTurn = () => Math.floor(Math.random() * (1 - 0 + 1))+0
 
 function randomTurn() {
   let arr = ["circle", "cross"];
@@ -39,14 +37,9 @@ function figureChoose() {
   const valueFigure1 = radioChecked1?.value;
   const valueFigure2 = radioChecked2?.value;
 
-  console.log("Valor del boton1: " + radioChecked1);
-  console.log("Valor del boton2: " + radioChecked2);
-  console.log("Valor del boton1: " + valueFigure1);
-  console.log("Valor del boton2: " + valueFigure2);
-
   //no pueden elegir la misma figura
   if (valueFigure1 === valueFigure2) {
-    console.log("No puede elegir la misma figura los dos jugadores.");
+    alert("Los dos jugadores no pueden tener la misma figura");
   } else {
     if (valueFigure1 === "circle") {
       player1.figureName = valueFigure1;
