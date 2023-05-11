@@ -6,7 +6,7 @@ export default function Cell(props: { id: string }) {
 
     const button: HTMLButtonElement = event.currentTarget;
 
-    button.textContent = InsertFigureCell();
+    button.textContent = InsertFigureCell(button.id);
   };
   return (
     <button className="cells" onClick={buttonHandler} id={props.id}></button>

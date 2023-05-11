@@ -1,6 +1,6 @@
 import { matchBegin, player1, player2 } from "./InitializeMatch";
 
-export default function InsertFigureCell() {
+export default function InsertFigureCell(id: string) {
   var turn = matchBegin.actualTurn;
   var figureName;
   var figure;
@@ -9,8 +9,8 @@ export default function InsertFigureCell() {
   console.log("Figure jug 2: " + player2.figureName);
 
   turn === player1.figureName
-    ? (figureName = player1.figureName)
-    : (figureName = player2.figureName);
+    ? (figureName = player1.figureName) && matchBegin.player1Cells?.push(id)
+    : (figureName = player2.figureName) && matchBegin.player1Cells?.push(id);
 
   if (figureName === "cross") {
     figure = "X";
