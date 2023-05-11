@@ -12,16 +12,16 @@ export default function CheckWinner() {
     ["2", "4", "6"],
   ];
 
-  if (
-    matchBegin.player1Cells?.length >= 3 ||
-    matchBegin.player2Cells?.length >= 3
-  ) {
-    winnerCombinatios.some((combination) => {
-      matchBegin.player1Cells.map((cell) => {
-        return combination.includes(cell);
-      });
-      return false;
-    });
-  }
-  //como se cuando devuelve true para los 3 elementos de la combinacions
+  var flag = false;
+  winnerCombinatios.some((combination) => {
+    if (
+      combination.every((a) => {
+        return matchBegin.player1Cells.includes(a);
+      })
+    ) {
+      flag = true;
+    }
+    return flag;
+  });
+  console.log("Checkwinner ejecutada: " + flag);
 }
