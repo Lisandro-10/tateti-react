@@ -1,6 +1,4 @@
-import CheckWinner from "./CheckWinner";
 import { matchBegin, player1, player2 } from "./InitializeMatch";
-import Match from "../model/Match";
 
 export default function InsertFigureCell(id: string) {
   var turn = matchBegin.actualTurn;

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import InitializeMatch from "../logic/InitializeMatch";
-import DisableElements from "../logic/DisableElements";
 
 const GameStarter = () => {
   const [disabled, setDisabled] = useState(false);

@@ -1,7 +1,5 @@
-import React from "react";
 import Match from "../model/Match";
 import Player from "../model/Player";
-import Cell from "../Cell";
 
 export var matchBegin = new Match(randomTurn());
 export var player1 = new Player("");
