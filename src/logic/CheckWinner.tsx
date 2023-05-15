@@ -16,12 +16,16 @@ export default function CheckWinner() {
   winnerCombinatios.some((combination) => {
     if (
       combination.every((a) => {
-        return matchBegin.player1Cells.includes(a);
+        var winCheck = [
+          matchBegin.player1Cells.includes(a),
+          matchBegin.player2Cells.includes(a),
+        ];
+        return winCheck[0] || winCheck[1];
       })
     ) {
       flag = true;
     }
     return flag;
   });
-  console.log("Checkwinner ejecutada: " + flag);
+  return flag;
 }

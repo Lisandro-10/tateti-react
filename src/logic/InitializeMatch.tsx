@@ -1,5 +1,7 @@
+import React from "react";
 import Match from "../model/Match";
 import Player from "../model/Player";
+import Cell from "../Cell";
 
 export var matchBegin = new Match(randomTurn());
 export var player1 = new Player("");
@@ -12,7 +14,14 @@ export default function InitializeMatch() {
   player1.name = input1?.value;
   player2.name = input2?.value;
 
-  figureChoose();
+  if (figureChoose()) {
+    //falta habilitar los botones
+
+    return true;
+  } else {
+    alert("Datos de jugadores incorrectos.");
+    return false;
+  }
 }
 
 function randomTurn() {
@@ -39,7 +48,7 @@ function figureChoose() {
 
   //no pueden elegir la misma figura
   if (valueFigure1 === valueFigure2) {
-    alert("Los dos jugadores no pueden tener la misma figura");
+    return false;
   } else {
     if (valueFigure1 === "circle") {
       player1.figureName = valueFigure1;
@@ -48,5 +57,6 @@ function figureChoose() {
       player1.figureName = valueFigure2;
       player2.figureName = valueFigure1;
     }
+    return true;
   }
 }

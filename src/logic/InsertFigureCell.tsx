@@ -1,5 +1,6 @@
 import CheckWinner from "./CheckWinner";
 import { matchBegin, player1, player2 } from "./InitializeMatch";
+import Match from "../model/Match";
 
 export default function InsertFigureCell(id: string) {
   var turn = matchBegin.actualTurn;
@@ -17,7 +18,5 @@ export default function InsertFigureCell(id: string) {
     figure = "O";
     matchBegin.actualTurn = "cross";
   }
-  CheckWinner();
   return figure;
-  // "<p class='figure-para'>X</p>";
 }

@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import InitializeMatch from "../logic/InitializeMatch";
 import DisableElements from "../logic/DisableElements";
 
-export default function GameStarter() {
+const GameStarter = () => {
+  const [disabled, setDisabled] = useState(false);
+  const [className, setClassName] = useState("btn-start");
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    const button: HTMLButtonElement = event.currentTarget;
-    DisableElements(button);
-    InitializeMatch();
+
+    if (InitializeMatch()) {
+      setClassName("btn-start-clicked");
+      setDisabled(true);
+    }
   };
   return (
-    <button className="btn-start" onClick={handleClick}>
+    <button className={className} onClick={handleClick} disabled={disabled}>
       Iniciar Partida
     </button>
   );
-}
+};
+
+export default GameStarter;
