@@ -6,24 +6,16 @@ export var player1 = new Player("");
 export var player2 = new Player("");
 
 export default function InitializeMatch() {
-  const input1 = document.getElementById("input1") as HTMLInputElement;
-  const input2 = document.getElementById("input2") as HTMLInputElement;
+  player1.name = (document.getElementById("input1") as HTMLInputElement)?.value;
+  player2.name = (document.getElementById("input2") as HTMLInputElement)?.value;
 
-  player1.name = input1?.value;
-  player2.name = input2?.value;
-
-  if (figureChoose()) {
-    //falta habilitar los botones
-
-    return true;
-  } else {
-    alert("Datos de jugadores incorrectos.");
-    return false;
-  }
+  return figureChoose()
+    ? figureChoose()
+    : alert("Datos de jugadores incorrectos.");
 }
 
 function randomTurn() {
-  let arr = ["circle", "cross"];
+  let arr = ["O", "X"];
   let min = 0;
   let max = 1;
   let index = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -32,7 +24,6 @@ function randomTurn() {
 
 function figureChoose() {
   //traigo los grupos de botones
-
   const radioChecked1 = document.querySelector(
     "input[name = 'jugador1']:checked"
   ) as HTMLInputElement | null;
@@ -48,7 +39,7 @@ function figureChoose() {
   if (valueFigure1 === valueFigure2) {
     return false;
   } else {
-    if (valueFigure1 === "circle") {
+    if (valueFigure1 === "O") {
       player1.figureName = valueFigure1;
       player2.figureName = valueFigure2;
     } else {

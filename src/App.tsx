@@ -1,10 +1,9 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import ChooseSection from "./components/GlobalContent";
 import Board from "./Board";
 import GameStarter from "./components/GameStarter";
+import WinnerLabel from "./components/WinnerLabel";
 
 function App() {
   return (
@@ -13,6 +12,8 @@ function App() {
       <ChooseSection />
 
       <GameStarter />
+
+      <WinnerLabel winnerName="" />
 
       <Board />
     </BrowserRouter>

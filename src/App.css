@@ -60,6 +60,7 @@
   left: 50%;
   margin: 10px auto;
   padding: 5%;
+  /* visibility: hidden; */
 }
 
 .row {
@@ -101,6 +102,11 @@
   transform: translate(-50%, -50%);
 }
 
+.winnerLabel {
+  margin: 5px;
+  padding: 5px;
+}
+
 /*** CELLS ***/
 .cells {
   display: inline-block;
@@ -113,17 +119,10 @@
   position: relative;
 }
 
-/* .cells:hover,
-.cells:active {
-  border-radius: 15px;
-  position: sticky;
-  text-decoration: overline;
+.cells:disabled {
+  color: #3a52a8;
+  font-size: 4.5rem;
 }
-
-.cells:link,
-.cells:visited {
-  pointer-events: none;
-} */
 
 /*** BUTTONS ***/
 
@@ -132,7 +131,6 @@
   border-radius: 15px;
   background-color: #ecefe6;
   color: #3a52a8;
-
   border: 2px solid transparent;
   padding: 10px;
   cursor: pointer;
@@ -145,5 +143,14 @@
 }
 
 .btn-start:active {
-  border: 3px solid #61dafb;
+  border: 2px solid #000;
+}
+
+.btn-start-clicked {
+  margin: 15px;
+  border-radius: 15px;
+  background-color: #ecefe6;
+  color: #3a52a8;
+  border: 2px solid transparent;
+  padding: 10px;
 }

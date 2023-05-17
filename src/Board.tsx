@@ -2,7 +2,7 @@ import Cell from "./Cell";
 
 export default function Board() {
   return (
-    <div className="board">
+    <div className="board" id="board">
       <div className="row">
         <Cell id={"0"}></Cell>
         <Cell id={"1"}></Cell>
@@ -18,6 +18,7 @@ export default function Board() {
         <Cell id={"7"}></Cell>
         <Cell id={"8"}></Cell>
       </div>
+      {}
     </div>
   );
 }

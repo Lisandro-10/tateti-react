@@ -1,5 +1,3 @@
-import InputRadio from "../components/InputRadio";
-
 export default function DisableElements(
   htmlEl: HTMLInputElement | HTMLButtonElement
 ) {
