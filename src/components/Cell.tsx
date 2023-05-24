@@ -1,6 +1,6 @@
 import { useState } from "react";
-import InsertFigureCell from "./logic/InsertFigureCell";
-import CheckWinner from "./logic/CheckWinner";
+import InsertFigureCell from "../logic/InsertFigureCell";
+import CheckWinner from "../logic/CheckWinner";
 
 export default function Cell(props: { id: string }) {
   const [disabled, setDisabled] = useState(false);
@@ -9,8 +9,10 @@ export default function Cell(props: { id: string }) {
 
     const button: HTMLButtonElement = event.currentTarget;
 
-    var x = CheckWinner();
+    //Devuelve un string
+    CheckWinner();
 
+    //Chequea si la celda ya tiene figura
     if (!disabled) {
       button.textContent = InsertFigureCell(button.id);
       setDisabled(true);

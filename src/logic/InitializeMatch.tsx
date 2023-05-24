@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Match from "../model/Match";
 import Player from "../model/Player";
 
@@ -9,9 +10,8 @@ export default function InitializeMatch() {
   player1.name = (document.getElementById("input1") as HTMLInputElement)?.value;
   player2.name = (document.getElementById("input2") as HTMLInputElement)?.value;
 
-  return figureChoose()
-    ? figureChoose()
-    : alert("Datos de jugadores incorrectos.");
+  //Devolvemos bool
+  return figureChoose();
 }
 
 function randomTurn() {

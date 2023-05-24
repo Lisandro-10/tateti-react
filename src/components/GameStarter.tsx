@@ -1,21 +1,28 @@
-import React, { useState } from "react";
-import InitializeMatch from "../logic/InitializeMatch";
+// import React, { useState } from "react";
+// import InitializeMatch from "../logic/InitializeMatch";
+import { NavLink } from "react-router-dom";
+import InitializeMatch, { matchBegin } from "../logic/InitializeMatch";
+import { useEffect } from "react";
 
 const GameStarter = () => {
-  const [disabled, setDisabled] = useState(false);
-  const [className, setClassName] = useState("btn-start");
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-
-    if (InitializeMatch()) {
-      setClassName("btn-start-clicked");
-      setDisabled(true);
-    }
-  };
+  //   const [showAlert, setShowAlert] = useState(false);
+  //   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  //     event.preventDefault();
+  //     Tengo que validar las figuras elegidas
+  //     if (!InitializeMatch()) {
+  //       setShowAlert(true);
+  //     } else {
+  //       window.location.href = "./match";
+  //     }
+  //   };
+  useEffect(() => {
+    matchBegin.player1Cells = [];
+  });
+  InitializeMatch();
   return (
-    <button className={className} onClick={handleClick} disabled={disabled}>
+    <NavLink to="./match" className="btn btn-start">
       Iniciar Partida
-    </button>
+    </NavLink>
   );
 };
 

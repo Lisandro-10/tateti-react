@@ -1,8 +1,13 @@
 import Cell from "./Cell";
 
 export default function Board() {
+  //De momento no hace nada esta funcion
+  const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    const board: HTMLDivElement = event.currentTarget;
+  };
   return (
-    <div className="board" id="board">
+    <div className="board" id="board" onClick={clickHandler}>
       <div className="row">
         <Cell id={"0"}></Cell>
         <Cell id={"1"}></Cell>
@@ -18,7 +23,6 @@ export default function Board() {
         <Cell id={"7"}></Cell>
         <Cell id={"8"}></Cell>
       </div>
-      {}
     </div>
   );
 }

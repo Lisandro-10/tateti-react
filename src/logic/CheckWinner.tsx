@@ -1,6 +1,6 @@
 import { matchBegin, player1, player2 } from "./InitializeMatch";
 
-export default function CheckWinner() {
+const CheckWinner = () => {
   var winnerCombinatios = [
     ["0", "1", "2"],
     ["3", "4", "5"],
@@ -22,16 +22,24 @@ export default function CheckWinner() {
           matchBegin.player1Cells.includes(a),
           matchBegin.player2Cells.includes(a),
         ];
-        console.log("El wincheck: " + winCheck);
         return winCheck[0] || winCheck[1];
       })
     ) {
       flag = true;
+      winCheck[0] ? (winner = player1.name) : (winner = player2.name);
     }
-    winCheck[0] ? (winner = player1.name) : (winner = player2.name);
-    //InsertWinner(winner);
     return flag;
   });
-  console.log("Ganador? " + winner);
+
+  if (
+    (matchBegin.player1Cells.length >= 5 ||
+      matchBegin.player1Cells.length >= 5) &&
+    winner === ""
+  ) {
+    winner = "EMPATE";
+  }
+
   return winner;
-}
+};
+
+export default CheckWinner;

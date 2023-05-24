@@ -53,18 +53,9 @@
   margin: 3rem auto;
 }
 
-.board {
-  background-color: #3a52a8;
-  height: 500px;
-  width: 500px;
-  left: 50%;
-  margin: 10px auto;
-  padding: 5%;
-  /* visibility: hidden; */
-}
-
 .row {
   width: 100%;
+  margin: auto;
 }
 
 /*** INPUT ***/
@@ -93,7 +84,7 @@
 
 .figure-para {
   margin: 0;
-  padding: 1%;
+  /* padding: 1%; */
   font-size: 5rem;
   font-family: sans-serif;
   position: absolute;
@@ -117,6 +108,7 @@
   width: 145px;
   height: 145px;
   position: relative;
+  /* border: none; */
 }
 
 .cells:disabled {
@@ -126,15 +118,18 @@
 
 /*** BUTTONS ***/
 
-.btn-start {
-  margin: 15px;
-  border-radius: 15px;
+.btn {
+  border-radius: 10px;
   background-color: #ecefe6;
   color: #3a52a8;
-  border: 2px solid transparent;
-  padding: 10px;
   cursor: pointer;
   text-decoration: none;
+  padding: 10px;
+}
+
+.btn-start {
+  margin: 20px 15px;
+  padding: 10px;
 }
 
 .btn-start:hover {
@@ -152,5 +147,19 @@
   background-color: #ecefe6;
   color: #3a52a8;
   border: 2px solid transparent;
-  padding: 10px;
+}
+
+/*** BOARD ***/
+
+.board {
+  background-color: #3a52a8;
+  height: 500px;
+  width: 500px;
+  left: 50%;
+  margin: 10px auto;
+  padding: auto;
+}
+
+.board-disabled {
+  visibility: none;
 }
