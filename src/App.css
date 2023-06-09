@@ -37,22 +37,6 @@
   }
 }
 
-.title {
-  font-size: 175%;
-  font-weight: 600;
-  margin-bottom: 3.4rem;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.chooseFigure {
-  display: inline-block;
-  width: 12%;
-}
-
-.chooseSection {
-  margin: 3rem auto;
-}
-
 .row {
   width: 100%;
   margin: auto;
@@ -75,27 +59,8 @@
   margin: 8px 10px;
 }
 
-/*** PARA ***/
-
-.para {
-  margin: 0;
-  font-size: 0.7rem;
-}
-
-.figure-para {
-  margin: 0;
-  /* padding: 1%; */
-  font-size: 5rem;
-  font-family: sans-serif;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.winnerLabel {
-  margin: 5px;
-  padding: 5px;
+.player {
+  margin: 30px 0;
 }
 
 /*** CELLS ***/
@@ -105,15 +70,17 @@
   cursor: pointer;
   margin: 1%;
   padding: 1%;
-  width: 145px;
-  height: 145px;
+  width: 140px;
+  height: 140px;
   position: relative;
-  /* border: none; */
 }
 
-.cells:disabled {
-  color: #3a52a8;
-  font-size: 4.5rem;
+.figure {
+  width: 98%;
+  text-align: center;
+  position: absolute;
+  left: 0%;
+  top: 0%;
 }
 
 /*** BUTTONS ***/
@@ -124,26 +91,20 @@
   color: #3a52a8;
   cursor: pointer;
   text-decoration: none;
-  padding: 10px;
-}
-
-.btn-start {
   margin: 20px 15px;
   padding: 10px;
 }
-
-.btn-start:hover {
+.btn:hover {
   background-color: #3a52a8;
   color: #ecefe6;
 }
 
-.btn-start:active {
+.btn:active {
   border: 2px solid #000;
 }
 
-.btn-start-clicked {
-  margin: 15px;
-  border-radius: 15px;
+.btn-clicked {
+  pointer-events: none;
   background-color: #ecefe6;
   color: #3a52a8;
   border: 2px solid transparent;
@@ -161,5 +122,5 @@
 }
 
 .board-disabled {
-  visibility: none;
+  visibility: hidden;
 }
